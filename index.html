@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function getKeyword(){
+ var text = document.getElementById('query').value;
+ var options = {keywords: ['from', 'to','ph']}
+ var regex =  /(\S+\s*:\s*\S*)|(\S+\s*:[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$)/g;
+ var groups;
+ groups= regex.exec(text);
+console.log(groups)
+}
+</script>
+</head>
+<body>
+
+<h1>Test keyword</h1>
+
+<input type="text" id="query" value="ph:(123) 456-7890" />
+<input type="submit" value="click me" onclick="getKeyword()"/>
+
+</body>
+
+</html>
